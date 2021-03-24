@@ -248,7 +248,7 @@ module.exports = {
 				//check password of user
 				
 				if(isValPassword){
-					let playLoad = {email: req.body.email}
+					let playLoad = {email: req.body.email, userId: users[0]._id}
 					const accessToken = jwt.sign(playLoad, 'mysecretkey', {
 						algorithm: "HS256",
 						expiresIn: "2h"

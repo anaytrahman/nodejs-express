@@ -16,12 +16,15 @@ database();
 const userRouter = require('./src/routes/userRouter');
 userRouter(app);
 
+const postRouter = require('./src/routes/postRouter');
+postRouter(app);
+
 app.get('/', (req, res) => {
-	res.json({
-		message: "app loaded"
-	});
+    res.json({
+        message: "app loaded"
+    });
 });
 
 app.listen(port, () => {
-	console.log(`server started on localhost${port}`);
+    console.log(`server started on localhost${port}`);
 });
